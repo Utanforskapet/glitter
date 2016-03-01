@@ -1,0 +1,35 @@
+
+			body {
+				font-family: Monospace;
+				background-color: #ffffff;
+				font-size: 24px;
+				color: #ffffff;
+				margin: 0px;
+				overflow: hidden;
+			}
+
+			#info {
+				position: absolute;
+				padding: 10px;
+				width: 100%;
+				text-align: top-center;
+			}
+
+			#reload {
+				position: absolute;
+				right: 10px;
+    			top: 5px;
+			}
+
+			a {
+
+				color: #fff;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+
+			#stats { position: absolute; top:0; left: 0 }
+			#stats #fps { background: transparent !important }
+			#stats #fps #fpsText { color: #aaa !important }
+			#stats #fps #fpsGraph { display: none }
+	
