@@ -213,7 +213,7 @@ if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 			     		box.x += pos.x;
 			     		box.y += pos.y;
-			     		//box.z += pos.z;
+			     		box.z += pos.z;
  			     	}
 			}
 

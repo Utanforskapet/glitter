@@ -15,6 +15,12 @@
 				text-align: top-center;
 			}
 
+			#info_button {
+				position: absolute;
+				right: 10px;
+    			bottom: 5px;
+			}
+
 			#reload {
 				position: absolute;
 				right: 10px;
