@@ -189,41 +189,41 @@ if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 			// Changes the velocity and position if the glitter hits the sphere
 			function check_sphere (box, i) { 
-				var friction = 0.1;
+			var friction = 0.1;
 
  			     	if(check_collision(box) == true)
  			     	{
- 			     		// Velocity vector
+ 			     		//hasteghetsvektorn för glitter
  			     		var v = new THREE.Vector3( box.dx, box.dy, box.dz );
- 			     		// Position vector
- 			     		var posNew = new THREE.Vector3( box.x, box.y, box.z);
+ 			     		//positionsvektorn för glitter
+ 			     		var pos = new THREE.Vector3( box.x, box.y, box.z);
 
- 			     		// Length of velocity vector
+ 			     		//längden av hastighetsvektorn
  			     		var l = v.length();
  			     		l *= friction;
 
- 			     		// Normalize both vectors
+ 			     		//Normaliserar båda vektorerna
  			     		v.normalize();
-			     		posNew.normalize();
+			     		pos.normalize();
 
-			     		//Project the velocity vector on the position vector
-			     		var projPos= v.projectOnVector(posNew);
+			     		//projicerar hastighetsvektorn på positions vektorn
+			     		var projPos= v.projectOnVector(pos);
 			  
-			     		// Create a new vector that is the position of the projected vector
-			     		var vNew = new THREE.Vector3(projPos.x, projPos.y, projPos.z);
+			     		//Skapar en ny vektor som är positionerna av den projicerade vektorn
+			     		var posNew = new THREE.Vector3(projPos.x, projPos.y, projPos.z);
 
-			     		// Sets the new vector to the same length as the velocity vector
+			     		//sätter den nya poitions vektorn till samma längd som hastighets vektorn
 			     		posNew.setLength(l);
 			     		
 			     		box.rotation = Math.random();
 
-			     		box.dx = vNew.x*0.5;
-			     		box.dy = vNew.y*9;
-			     		box.dz = vNew.z *0.5;
+			     		box.dx = posNew.x*0.5;
+			     		box.dy = posNew.y*9;
+			     		box.dz = posNew.z *0.5;
 
-			     		box.x += posNew.x;
-			     		box.y += posNew.y;
-			     		box.z += posNew.z;
+			     		box.x += pos.x;
+			     		box.y += pos.y;
+			     		box.z += pos.z;
  			     	}
 			}
 
